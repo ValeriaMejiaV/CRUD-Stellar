@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../estilo.css">
+
+  <title>Formulario de Canciones</title>
+  
+</head>
+<body>
+  <header>
+    <nav class="menu">
+        <a href="inicio.php" class="button">Pagina Principal</a> 
+        <a href="../actualizar/modificar.php" class="button">Modifica / Elimina</a>
+        <a href="../selects.php" class="button">Disponibles</a>
+    </nav>
+</header>
+  <h1>Formulario de Canciones</h1>
+  <form action="inserts.php" method="POST">
+    <label for="titulo">Título:</label>
+    <input type="text" id="titulo" name="titulo" required>
+
+    <label for="artista">Artista:</label>
+    <input type="text" id="artista" name="artista" required>
+
+    <label for="album">Álbum:</label>
+    <input type="text" id="album" name="album">
+
+    <label for="genero">Género:</label>
+    <input type="text" id="genero" name="genero">
+
+    <label for="duracion">Duración:</label><br></br>
+    <input type="time" id="duracion" name="duracion"><br></br>
+
+    <label for="fecha_lanzamiento">Fecha de Lanzamiento:</label>
+    <input type="date" id="fecha_lanzamiento" name="fecha_lanzamiento">
+
+    <label for="idioma">Idioma:</label>
+        <select id="idioma" name="idioma" required>
+            <option value="">Selecciona un idioma</option>
+            <!-- Aquí puedes agregar opciones para diferentes países -->
+            <option value="Español">Español</option>
+            <option value="Inglés">Inglés</option>
+            <option value="Francés">Francés</option>
+            <!-- Puedes agregar más opciones según sea necesario -->
+        </select>
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>
