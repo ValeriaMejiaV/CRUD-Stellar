@@ -9,7 +9,7 @@
 3. **Hacer el commit:**
    ```bash
    git commit -m "El meu primer commit"
-4.**Comprobación del commit:** 
+4. **Comprobación del commit:** 
    ```bash
    git status
    git log
