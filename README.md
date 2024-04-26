@@ -2,8 +2,8 @@
 ## Documentación de commit
 1. **Verificar el estado de los archivos:**
    ```bash
-   git status
-2. **Agregar archivos al área de preparacións:**
+   git statuS
+2. **Agregar archivos al área de preparación:**
    ```bash
    git add Jordi/
 3. **Hacer el commit:**
