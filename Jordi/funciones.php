@@ -1,4 +1,27 @@
 <?php
+/**
+ * ConectarBD 
+ *      Se conecta con la base de datos.
+ * 
+ * InsertarCanción
+ *      @param string $titulo, $artista, $album, $genero, $duracion, $fecha_lanzamiento, $idioma campos para insertar en la base de datos.
+ *       En caso de que no funcione @return Error o @return confirmación.
+ * 
+ * EliminarCanción
+ *      @param integer $identificador id de la tabla a borrar.
+ * 
+ * ObtenerCanciones
+ *      Muestra los datos existentes en la base de datos.
+ * 
+ * Actualizar Canción
+ *       @param integer $identificador
+ *       @param string $titulo, $artista, $album, $genero, $duracion, $fecha_lanzamiento, $idioma
+ *        Datos que actuallizar en la base de datos.
+ * 
+ * Tablas
+ *      @param string $resultadoSelect
+ *      Realiza una tabla con el resultado del select.
+ */
 function conectarBD() {
     $host = "localhost";
     $dbname = "stellar";
