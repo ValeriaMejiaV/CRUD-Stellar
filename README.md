@@ -32,10 +32,27 @@
    git commit -m "Git ignore"
    ```
    Y verificamos nuevamente
-
-
-  
-  
+## Documentación brancas
+1. **Crear un branca:**
+   ```bash
+   git branch BRANCA
+   ```
+2. **Listar brancas:**
+   ```bash
+   git branch -l
+   ```
+3. **Eliminar brancas:**
+   ```bash
+   git branch -d BRANCA
+   ```
+4. **Cambio de branca:**
+   ```bash
+   git checkout BRANCA
+   ```   
+5. **Mezclar brancas**
+ ```bash
+   git merge BRANCA
+   ``` 
 
        
   
