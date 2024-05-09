@@ -12,23 +12,20 @@
   <header>
     <nav class="menu">
         <a href="../inicio.php" class="button">Pagina Principal</a> 
-        <a href="../actualizar/modificar.php" class="button">Modifica / Elimina</a>
-        <a href="../selects.php" class="button">Disponibles</a>
+        <a href="formularioUsuario.html" class="button">Usuarios</a>
+        <a href="formularioComentario.html" class="button">Comentarios</a>
+        <a href="formulario.html" class="button">Canciones</a>
     </nav>
 </header>
-    <h1>Registro de Usuario</h1>
-    <form action="procesar_registro.php" method="POST">
-        <label for="nombre_usuario">Nombre de Usuario:</label>
-        <input type="text" id="nombre_usuario" name="nombre_usuario" required><br><br>
+  <h1>Marcar Canción como Favorita</h1>
+  <form action="procesar_favorito.php" method="POST">
+      <label for="nombre_usuario">Usuario:</label>
+      <input type="text" id="nombre_usuario" name="nombre_usuario" required><br><br>
 
-        <label for="email">Correo Electrónico:</label>
-        <input type="email" id="email" name="email" required><br><br>
+      <label for="cancion">Canción:</label>
+      <input type="text" id="cancion" name="cancion" required><br><br>
 
-        <label for="contrasenia">Contraseña:</label>
-        <input type="password" id="contrasenia" name="contrasenia" required><br><br>
-
-        <input type="submit" value="Registrar">
-    </form>
+      <input type="submit" value="Marcar como Favorita">
   </form>
 </body>
 </html>

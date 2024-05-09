@@ -12,20 +12,22 @@
   <header>
     <nav class="menu">
         <a href="../inicio.php" class="button">Pagina Principal</a> 
-        <a href="../actualizar/modificar.php" class="button">Modifica / Elimina</a>
-        <a href="../selects.php" class="button">Disponibles</a>
+        <a href="formularioUsuario.html" class="button">Usuarios</a>
+        <a href="formularioFavoritos.html" class="button">Favoritos</a>
+        <a href="formulario.html" class="button">Canciones</a>
+
     </nav>
 </header>
     <h1>Agregar Comentario</h1>
     <form action="procesar_comentario.php" method="POST">
-        <label for="id_">ID de Usuario:</label>
-        <input type="text" id="userID" name="userID" required><br><br>
+        <label for="nombre_usuario">Nombre Usuario:</label>
+        <input type="text" id="nombre_usuario" name="nombre_usuario" required><br><br>
 
-        <label for="songID">ID de Canción:</label>
-        <input type="text" id="songID" name="songID" required><br><br>
+        <label for="cancion">Canción:</label>
+        <input type="text" id="cancion" name="cancion" required><br><br>
 
-        <label for="content">Contenido:</label><br>
-        <textarea id="content" name="content" rows="4" cols="50" required></textarea><br><br>
+        <label for="contenido">Contenido:</label><br>
+        <textarea id="content" name="contenido" rows="4" cols="50" required></textarea><br><br>
 
         <input type="submit" value="Agregar Comentario">
     </form>
