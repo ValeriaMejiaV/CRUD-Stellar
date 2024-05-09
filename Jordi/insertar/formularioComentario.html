@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../estilo.css">
+
+  <title>Formulario de Canciones</title>
+  
+</head>
+<body>
+  <header>
+    <nav class="menu">
+        <a href="../inicio.php" class="button">Pagina Principal</a> 
+        <a href="../actualizar/modificar.php" class="button">Modifica / Elimina</a>
+        <a href="../selects.php" class="button">Disponibles</a>
+    </nav>
+</header>
+    <h1>Agregar Comentario</h1>
+    <form action="procesar_comentario.php" method="POST">
+        <label for="id_">ID de Usuario:</label>
+        <input type="text" id="userID" name="userID" required><br><br>
+
+        <label for="songID">ID de Canción:</label>
+        <input type="text" id="songID" name="songID" required><br><br>
+
+        <label for="content">Contenido:</label><br>
+        <textarea id="content" name="content" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Agregar Comentario">
+    </form>
+</body>
+</html>
