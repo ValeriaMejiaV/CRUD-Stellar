@@ -88,6 +88,25 @@ function obtenerUsuarios() {
         return "No se encontraron resultados.";
     }
 }
+
+function obtenerUsuarioExistente($usuario, $pwd) {
+    $conection = conectarBD();
+    
+    if (!$conection) {
+        return "Error en la conexión.";
+    }
+    
+    $consulta = "SELECT * FROM usuario WHERE '$usuario'=nombre_usuario AND '$pwd'=contrasenia";
+    echo $consulta;
+    $resultadoSelect = pg_query($conection, $consulta);
+    //echo pg_num_rows($resultadoSelect);
+    if ( pg_num_rows($resultadoSelect) != 0) {
+       return true;
+    } else {
+        return false;
+    }
+}
+
 function actualizarUsuario($identificador, $titulo, $artista, $genero, $duracion, $fecha_lanzamiento, $idioma, $album){
     $conection = conectarBD();
     
