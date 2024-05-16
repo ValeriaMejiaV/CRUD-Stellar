@@ -35,7 +35,13 @@ if (!$conection){
 </header>
     <?php
         $identificador=$_GET['id'];
-        $resultado=pg_query($conection, "SELECT * FROM Canciones where id=$identificador");
+        $consulta="SELECT c.id, c.titulo, a.nombre AS nombre_artista, c.album, c.genero, c.duracion, c.fecha_lanzamiento, i.nombre AS nombre_idioma
+        FROM canciones c
+        JOIN artista a ON c.artista = a.id
+        JOIN idioma i ON c.idioma = i.id
+        WHERE c.id = $identificador
+        ORDER BY c.artista DESC;";
+        $resultado=pg_query($conection, $consulta);
         $registro=pg_fetch_assoc($resultado);
     ?>
   <h1>Formulario de Canciones</h1>
@@ -44,7 +50,7 @@ if (!$conection){
     <input type="text" id="titulo" name="titulo" value="<?php echo $registro['titulo']?>">
 
     <label for="artista">Artista:</label>
-    <input type="text" id="artista" name="artista" value="<?php echo $registro['artista']?>">
+    <input type="text" id="artista" name="artista" value="<?php echo $registro['nombre_artista']?>">
 
     <label for="album">Álbum:</label>
     <input type="text" id="album" name="album" value="<?php echo $registro['album']?>">
@@ -59,7 +65,7 @@ if (!$conection){
     <input type="date" id="fecha_lanzamiento" name="fecha_lanzamiento" value="<?php echo $registro['fecha_lanzamiento']?>">
 
     <label for="idioma">Idioma:</label>
-        <select id="idioma" name="idioma" default="<?php echo $registro['idioma']?>">
+        <select id="idioma" name="idioma" default="<?php echo $registro['nombre_idioma']?>">
             <option value="">Selecciona un idioma</option>
             <!-- Aquí puedes agregar opciones para diferentes países -->
             <option value="Español">Español</option>
