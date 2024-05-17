@@ -43,7 +43,7 @@
     
     // Obtener los datos del formulario
     ini_set('display_errors', 1);
-    include_once '../funcionesUsuarios.php';
+    include_once '../inicio_sesion/funcionesUsuarios.php';
     $nombre_usuario=$_POST['nombre_usuario'] ;
     $email=$_POST['email'];
     $contrasenia= $_POST['contrasenia'];

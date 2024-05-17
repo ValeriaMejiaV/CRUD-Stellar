@@ -21,19 +21,19 @@ if (!$conection){
         ini_set('display_errors', 1);
         include '../funciones.php';
         $titulo=$_POST['titulo'] ;
-        $artista=$_POST['artista'];
+        $nombre_artista=$_POST['artista'];
         $genero= $_POST['genero'];
         $album=$_POST['album'];
         $duracion=$_POST['duracion'];
         $fecha_lanzamiento=$_POST['fecha_lanzamiento'];
-        $idioma=$_POST['idioma'];
+        $nombre_idioma=$_POST['idioma'];
         
 
 
         $identificador=$_GET['id'];
-        $resultadoUpdate = actualizarCancion($identificador, $titulo, $artista, $genero, $duracion, $fecha_lanzamiento, $idioma, $album);
+        $resultadoUpdate = actualizarCancion($identificador, $titulo, $nombre_artista, $album, $genero, $duracion, $fecha_lanzamiento, $nombre_idioma);
         if ($resultadoUpdate=="ok"){
-            echo 'Actualizacion realizada <a href="modificar.php">Tornar al lista</a>';
+            header ("Location: modificar.php");
         }
         
         

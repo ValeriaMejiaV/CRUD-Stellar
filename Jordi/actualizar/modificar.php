@@ -28,7 +28,7 @@ if (!$conection){
     <table class="styled-table">
         <tr><td>Titulo</td><td>Artista</td><td>Album</td><td>Genero</td><td>Duracion</td><td>Fecha de lanzamiento</td><td>Idioma</td></tr>
         <?php
-        $consulta = "SELECT c.id, c.titulo, a.nombre AS nombre_artista, c.album, c.genero, c.duracion, c.fecha_lanzamiento, i.nombre AS nombre_idioma,
+        $consulta = "SELECT c.id, c.titulo, a.nombre AS nombre_artista, c.album, c.genero, c.duracion, c.fecha_lanzamiento, i.nombre AS nombre_idioma
         FROM canciones c
         JOIN artista a ON c.artista = a.id
         JOIN idioma i ON c.idioma = i.id

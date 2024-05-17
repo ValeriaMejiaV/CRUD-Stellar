@@ -22,7 +22,7 @@
  *      @param string $resultadoSelect
  *      Realiza una tabla con el resultado del select.
  */
-
+ini_set('display_errors', 1);
 function conectarBD() {
     $host = "localhost";
     $dbname = "stellar";
@@ -38,21 +38,27 @@ function conectarBD() {
 
 function obtenerIdPorNombre($tabla, $nombre) {
     $conection = conectarBD();
-    
+
     if (!$conection) {
         return "Error en la conexión.";
     }
-    
+
     $query = "SELECT id FROM $tabla WHERE nombre = '$nombre'";
     $result = pg_query($conection, $query);
-    
-    if ($result) {
+
+    if ($result === false) {
+        // Manejo del error en la consulta
+        return null;
+    }
+
+    if (pg_num_rows($result) > 0) {
         $row = pg_fetch_assoc($result);
         return $row['id'];
     } else {
         return null;
     }
 }
+
 
 function crearRegistroSiNoExiste($tabla, $nombre) {
     $conection = conectarBD();
@@ -139,6 +145,7 @@ function obtenerCanciones() {
 }
 
 function actualizarCancion($identificador, $titulo, $nombre_artista, $album, $genero, $duracion, $fecha_lanzamiento, $nombre_idioma) {
+    
     $conection = conectarBD();
     
     if (!$conection) {
@@ -146,8 +153,8 @@ function actualizarCancion($identificador, $titulo, $nombre_artista, $album, $ge
     }
     
     // Obtener o crear los IDs correspondientes a los nombres
-    $artista = crearRegistroSiNoExiste('artista', $nombre_artista);
-    $idioma = crearRegistroSiNoExiste('idioma', $nombre_idioma);
+    $artista = obtenerIdPorNombre('artista', $nombre_artista);
+    $idioma = obtenerIdPorNombre('idioma', $nombre_idioma);
     
     if (is_string($artista) || is_string($idioma)) {
         return "Error: " . (is_string($artista) ? $artista : $idioma);
