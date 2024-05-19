@@ -20,7 +20,7 @@ if (!$conection){
 <body>
     <header>
         <nav class="menu">
-            <a href="../inicio.html" class="button">Pagina Principal</a> 
+            <a href="../inicio.php" class="button">Pagina Principal</a> 
             <a href="../selects.php" class="button">Disponibles</a>
             <a href="../insertar/formulario.html" class="button">Añadir</a>
         </nav>

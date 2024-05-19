@@ -13,10 +13,11 @@
     
     <header>
         <nav class="menu">
-            <a href="inicio.html" class="button">Pagina Principal</a> 
-            <a href="insertar/formulario.html" class="button">Añadir</a>
-            <a href="actualizar/modificar.php" class="button">Modificar / Eliminar</a>
-            <a href="selects.php" class="button">Disponibles</a>
+            <a href="inicio_sesion/formulario_inicio.html" class="button">Inicio sesion</a> 
+            <a href="insertar/formularioUsuario.html"class="button">Registro</a>
+            <a href="insertar/formulario.html" class="button">Canciones</a>
+            <a href="inicio_sesion/cerrar_sesion.php"class="button">Cerrar sesion</a>
+           
         </nav>
     </header>
     <main>

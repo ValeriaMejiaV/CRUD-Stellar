@@ -31,12 +31,12 @@ if (!$conection){
 
 
         $identificador=$_GET['id'];
-        $resultadoUpdate = actualizarCancion($identificador, $titulo, $nombre_artista, $album, $genero, $duracion, $fecha_lanzamiento, $nombre_idioma);
+        $resultadoUpdate = actualizarCancion($identificador, $titulo, $nombre_artista, $album, $genero, $fecha_lanzamiento, $nombre_idioma, $duracion);
         if ($resultadoUpdate=="ok"){
             header ("Location: modificar.php");
-        }
+        }else{echo $resultadoUpdate;}
         
         
-        ;
+        
 
     ?>

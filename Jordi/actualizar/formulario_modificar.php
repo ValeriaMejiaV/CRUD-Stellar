@@ -46,9 +46,9 @@ $resultado_idiomas = pg_query($conection, $consulta_idiomas);
 <body>
   <header>
     <nav class="menu">
-        <a href="inicio.php" class="button">Pagina Principal</a> 
+        <a href="../inicio.php" class="button">Pagina Principal</a> 
         <a href="modificar.php" class="button">Modifica / Elimina</a>
-        <a href="formulario.html" class="button">Añadir</a>
+        <a href="../formulario.html" class="button">Añadir</a>
     </nav>
   </header>
 

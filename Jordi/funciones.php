@@ -37,6 +37,7 @@ function conectarBD() {
 }
 
 function obtenerIdPorNombre($tabla, $nombre) {
+    ini_set('display_errors', 1);
     $conection = conectarBD();
 
     if (!$conection) {
@@ -144,30 +145,29 @@ function obtenerCanciones() {
     }
 }
 
-function actualizarCancion($identificador, $titulo, $nombre_artista, $album, $genero, $duracion, $fecha_lanzamiento, $nombre_idioma) {
-    
+function actualizarCancion($identificador, $titulo, $nombre_artista, $album, $genero, $fecha_lanzamiento, $nombre_idioma, $duracion, ) {
+    ini_set('display_errors', 1);
     $conection = conectarBD();
     
     if (!$conection) {
         return "Error en la conexión.";
     }
     
-    // Obtener o crear los IDs correspondientes a los nombres
     $artista = obtenerIdPorNombre('artista', $nombre_artista);
     $idioma = obtenerIdPorNombre('idioma', $nombre_idioma);
     
-    if (is_string($artista) || is_string($idioma)) {
-        return "Error: " . (is_string($artista) ? $artista : $idioma);
+    if (! $artista ||!$idioma) {
+        return "Error: ";
     }
 
     $consulta_actualizacion = "UPDATE canciones 
                                SET titulo='$titulo',
-                                   artista=$artista,
+                                   artista='$artista',
                                    album='$album',
                                    genero='$genero',
-                                   duracion='$duracion',
                                    fecha_lanzamiento='$fecha_lanzamiento',
-                                   idioma=$idioma
+                                   idioma='$idioma',
+                                   duracion='$duracion'   
                                WHERE id=$identificador";
     if (!pg_query($conection, $consulta_actualizacion)){
         return "ERROR EN LA ACTUALIZACIÓN";
